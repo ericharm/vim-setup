@@ -37,5 +37,11 @@ gonna need to download and install the font Meslo LG S Regular for Powerline
 - `chsh -s $(which zsh)` - set zsh as default shell
 - install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
 - edit ~/.zshrc setting ZSH_THEME="agnoster"
-
+- edit ~/.oh-my-zsh/themes/agnoster.zsh-theme, removing context from build_prompt at the bottom, and modifying the prompt_dir function thusly:
+```
+prompt_dir() {
+  prompt_segment blue black '%1~'
+}
+```
+Run in full screen mode at all times for maximum power
 
