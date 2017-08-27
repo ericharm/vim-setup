@@ -6,7 +6,8 @@
 
 ## Pretty colors
 - at least set Cursor color to #fe40ff - grey sucks
- to match the rest of my colors:
+
+to match the rest of my colors:
 - normal yellow to #ed8e1e
 - bright blue to #af81ff
 - bright magenta to #f92a72
@@ -24,6 +25,7 @@ gonna need to download and install the font Meslo LG S Regular for Powerline
 - `rm -rf ~/.vim/` or back it up somewhere if you're nervous
 - `mv -rf ./* ~/` to put everything in its right place
 - Feel free to delete the originally cloned folder: `cd .. && rm -rf vim-setup`
+- manually install airline for vim: `git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline`
 
 # Tmux
 
