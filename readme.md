@@ -19,10 +19,10 @@ gonna need to download and install the font Meslo LG S Regular for Powerline
 - `git clone https://github.com/ericharm/vim-setup.git`
 - `cd vim-setup`
 - `shopt -s dotglob` so the mv command will move hidden files
+- `rm .gitignore readme.md` otherwise you'll overwrite your system-wide .gitignore file (mine is set to ignore .DS_Store and .swp files)
 - `rm -rf ~/.vim/`
 - `mv -rf ./* ~/`
 - Feel free to delete the folder you cloned to: `cd .. && rm -rf vim-setup`
-- and this very readme file in your home directory: `rm ~/readme.md`
 
 #Tmux and zsh
 
