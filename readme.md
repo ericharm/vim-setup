@@ -45,5 +45,42 @@ prompt_dir() {
   prompt_segment blue black '%1~'
 }
 ```
-Run in full screen mode at all times for maximum power
+
+# Key takeaways
+
+## Zsh
+- My only real mod is to change the way the agnoster prompt looks a little bit, just to make it shorter.
+
+## Tmux
+- Alt+a gives you a vertical split, Alt+Shift+a gives you a horizontal split
+- Alt+Shift+Arrow keys resizes your splits
+- Alt+Arrow keys navigates between splits
+- Shift+Left/Right changes windows
+
+## Vim
+
+### Plugins
+- acp + supertab kinda rocks.
+- ctrlp, ctrlsf, nerdcommenter and emmet basically add my most missed features from sublime text.
+- I try to adhere to the creeds of jshint in my own projects.
+- I hardly use the other plugins to be honest. In fact I don't use surround or the git plugin at all.
+- I used to dig on tslime but when the terminal is just Alt+right_arrow I find it less useful.
+
+### Key bindings
+- resize panes with Alt+h/j/k/l.
+- `qq` is an alias for the escape key, same motion but much closer and has only burned me when copying big hashes and just now when I tried to type it into this readme.
+- Alt+/ for comments.
+- Tab and Shift-Tab to move through ... tabs.
+- Alt-Shift-f shortcut to fuzzy search.
+
+### Other
+- I like to know if supposedly blank lines are actually full of spaces, or if there are trailing spaces at the end of actual code statements.
+- I prefer tabs to spaces.
+- I like to indent 2 spaces by default in .rb files and 4 everywhere else. See: ftplugin/ruby.vim
+- I like bright colors.
+
+## Terminal environment overall
+- Everything is powerlined to hell.
+- Can do most of this stuff on a remote server.
+- It appeals to my personal aesthetic. Run in full screen mode at all times for maximum power.
 
