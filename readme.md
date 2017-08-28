@@ -55,14 +55,14 @@ prompt_dir() {
 
 ## Tmux
 - Alt+a gives you a vertical split, Alt+Shift+a gives you a horizontal split
-- Alt+Shift+Arrow keys resizes your splits
-- Alt+Arrow keys navigates between splits
+- Alt+Shift+Arrow keys to resize your splits
+- Alt+Arrow keys to navigate between splits
 - Shift+Left/Right changes windows
 
 ## Vim
 
 ### Plugins
-- acp + supertab kinda rocks
+- acp + supertab in my opinion is better than YCM
 - ctrlp, ctrlsf, nerdcommenter and emmet basically add my most missed features from sublime text
 - I try to adhere to the creeds of jshint in my own projects
 - I hardly use the other plugins to be honest. In fact I don't use surround or the git plugin at all
@@ -72,8 +72,10 @@ prompt_dir() {
 - resize panes with Alt+h/j/k/l
 - `qq` is an alias for the escape key, same motion but much closer and has only burned me when copying big hashes and just now when I tried to type it into this readme (just switch to paste mode)
 - Alt+/ for comments
+- Alt+t to open the current directory in a new tab
 - Tab and Shift-Tab to move through ... tabs
 - Alt-Shift-f shortcut to fuzzy search
+- there is some code-folding bit in the vimrc that is not quite what I want, have at it
 
 ### Other
 - I like to know if supposedly blank lines are actually full of spaces, or if there are trailing spaces at the end of actual code statements
@@ -82,7 +84,7 @@ prompt_dir() {
 - I like bright colors
 
 ## Terminal environment overall
-- everything is powerlined to hell, this appeals to my personal aesthetic
+- everything is powerlined to hell, this appeals to me, while you may think it's tasteless
 - can do most of this stuff on a remote server
 - run in full screen mode at all times for maximum power
 
