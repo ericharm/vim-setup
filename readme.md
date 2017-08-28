@@ -78,7 +78,6 @@ prompt_dir() {
 - Alt+t to open the current directory in a new tab
 - Tab and Shift-Tab to move through ... tabs
 - Alt-Shift-f shortcut to fuzzy search
-- there is some code-folding bit in the vimrc that is not quite what I want, have at it
 
 ### Other
 - I like to know if supposedly blank lines are actually full of spaces, or if there are trailing spaces at the end of actual code statements
