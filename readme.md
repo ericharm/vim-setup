@@ -63,7 +63,7 @@ prompt_dir() {
 
 ### Plugins
 - acp + supertab in my opinion is better than YCM
-- ctrlp, ctrlsf, nerdcommenter and emmet basically add my most missed features from sublime text
+- ctrlp, ctrlsf, nerdcommenter and emmet basically add my most missed features from Sublime Text
 - I try to adhere to the creeds of jshint in my own projects
 - I hardly use the other plugins to be honest. In fact I don't use surround or the git plugin at all
 - I used to dig on tslime but when the terminal is just Alt+right_arrow I find it less useful
