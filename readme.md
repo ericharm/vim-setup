@@ -6,9 +6,7 @@
 - download and install the font Meslo LG S Regular for Powerline (https://github.com/powerline/fonts/tree/master/Meslo%20Slashed) and set up your terminal to use it
 
 ### Pretty colors
-- at least set Cursor color to #fe40ff - grey sucks
-
-to match the rest of my colors:
+- set Cursor color to #fe40ff - grey sucks
 - normal yellow to #ed8e1e
 - bright blue to #af81ff
 - bright magenta to #f92a72
