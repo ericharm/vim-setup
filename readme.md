@@ -3,6 +3,7 @@
 - use iTerm (https://iterm2.com)
 - use the Molokai color scheme (http://iterm2colorschemes.com)
 - Preferences > Profiles > Keys > Left Option Key acts as +Esc
+- download and install the font Meslo LG S Regular for Powerline (https://github.com/powerline/fonts/tree/master/Meslo%20Slashed) and set up your terminal to use it
 
 ### Pretty colors
 - at least set Cursor color to #fe40ff - grey sucks
@@ -11,7 +12,6 @@ to match the rest of my colors:
 - normal yellow to #ed8e1e
 - bright blue to #af81ff
 - bright magenta to #f92a72
-- download and install the font Meslo LG S Regular for Powerline (https://github.com/powerline/fonts/tree/master/Meslo%20Slashed) and set up your terminal to use it
 
 # Vim and other configs
 
