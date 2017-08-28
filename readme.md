@@ -1,7 +1,7 @@
 # Terminal setup
 
-- Using iTerm (https://iterm2.com)
-- with the Molokai color scheme (http://iterm2colorschemes.com)
+- use iTerm (https://iterm2.com)
+- use the Molokai color scheme (http://iterm2colorschemes.com)
 - Preferences > Profiles > Keys > Left Option Key acts as +Esc
 
 ## Pretty colors
@@ -23,7 +23,7 @@ to match the rest of my colors:
 - `rm -rf .git` - more stuff you don't want mucking up your home folder
 - `rm -rf ~/.vim/` - or back it up somewhere if you're nervous
 - `mv -rf ./* ~/` - to put everything in its right place
-- Feel free to delete the originally cloned folder: `cd .. && rm -rf vim-setup`
+- feel free to delete the originally cloned folder: `cd .. && rm -rf vim-setup`
 - manually install airline for vim: `git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline`
 
 # Tmux
@@ -70,14 +70,14 @@ prompt_dir() {
 
 ### Key bindings
 - resize panes with Alt+h/j/k/l
-- `qq` is an alias for the escape key, same motion but much closer and has only burned me when copying big hashes and just now when I tried to type it into this readme
+- `qq` is an alias for the escape key, same motion but much closer and has only burned me when copying big hashes and just now when I tried to type it into this readme (just switch to paste mode)
 - Alt+/ for comments
 - Tab and Shift-Tab to move through ... tabs
 - Alt-Shift-f shortcut to fuzzy search
 
 ### Other
 - I like to know if supposedly blank lines are actually full of spaces, or if there are trailing spaces at the end of actual code statements
-- I prefer tabs to spaces
+- I prefer spaces to tabs
 - I like to indent 2 spaces by default in .rb files and 4 everywhere else. See: ftplugin/ruby.vim
 - I like bright colors
 
