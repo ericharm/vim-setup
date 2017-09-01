@@ -16,7 +16,7 @@ set list " show trailing spaces
 set listchars=trail:·
 
 let g:netrw_list_hide='.*\.swp$,.DS_Store' " hide temporary buffer files in source tree
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git' " don't show vendor files in ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git' " don't show vendor files in ctrlp
 let g:netrw_banner=0 " hide netrw banner
 set number " show line numbers
 
@@ -52,29 +52,41 @@ set expandtab " Tab key inserts four spaces in insert mode
 set mouse=a " enable mouse
 set backspace=2 " make backspace work like most other apps
 set pastetoggle=<F2> " F2 for better clipboard pasting
+set clipboard=unnamed " default register copies/pastes to/from Mac clipboard
 
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
 
 ""              "
 "" KEY BINDINGS "
 ""              "
 
-" Alt+t opens a new tab in the current directory
-map <esc>t :tabe<Space>.<Return>
+" Space opens a new tab in the current directory
+nnoremap <Space> :tabe<Space>.<Return>
 " Alt+h/j/k/l to resize panes
-map <esc>h :vertical resize -5<Return>
-map <esc>j :resize +5<Return>
-map <esc>k :resize -5<Return>
-map <esc>l :vertical resize +5<Return>
-" Alt+/ to comment current line
-map <esc>/ <leader>c<Space>h 
-" Alt+Shift+f brings up fuzzy search
-map <esc>F :CtrlSF<Space>
+nnoremap <esc>h :vertical resize -5<Return>
+nnoremap <esc>j :resize +5<Return>
+nnoremap <esc>k :resize -5<Return>
+nnoremap <esc>l :vertical resize +5<Return>
+" Alt+/ to comment current line - must be recursive because of plugin
+nmap <esc>/ <leader>c<Space>h
+" comma+f brings up fuzzy search
+nnoremap ,f :CtrlSF<Space>
 
 " Tab and Shift+Tab move between tabs
 nnoremap <Tab> :tabnext<cr>
 nnoremap <S-Tab> :tabprev<cr>
 
 " qq as escape alias
-map qq <esc>
-imap qq <esc>
+vnoremap qq v
+inoremap qq <esc>
+
+" when you move a cursor down it will go to the
+" next immediate line even if word wrap is on
+nnoremap j gj
+nnoremap k gk
+
+" comma+s brings up search and replace because I always forget how
+nnoremap ,s :%s/x/y/gc
 

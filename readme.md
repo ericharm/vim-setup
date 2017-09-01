@@ -26,8 +26,7 @@ to match the rest of my colors:
 - feel free to delete the originally cloned folder: `cd .. && rm -rf vim-setup`
 - you'll need pathogen (https://github.com/tpope/vim-pathogen)
 - manually install airline for vim: `git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline`
-- I use vim 8.0 which I installed via homebrew, for no reason other than
-getting the + buffer so I can copy to my Mac's clipboard
+- I use vim 8.0 which I installed via homebrew, for no reason other than getting the + buffer so I can copy to my Mac's clipboard
 
 # Tmux
 
