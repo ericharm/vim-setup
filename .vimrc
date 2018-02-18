@@ -1,3 +1,4 @@
+set termguicolors
 "" load plugins through pathogen
 execute pathogen#infect()
 filetype plugin on
@@ -9,14 +10,17 @@ set nocompatible
 "" APPEARANCE "
 ""            "
 
+syntax on
 syntax enable " gimme colors
-set t_Co=256 " gimme lots of colors
-colo elisex
+"set t_Co=256 " gimme lots of colors
+colo Dusk
+"colo elisex
 set list " show trailing spaces
 set listchars=trail:·
+set listchars=tab:>-
 
 let g:netrw_list_hide='.*\.swp$,.DS_Store' " hide temporary buffer files in source tree
-let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git' " don't show vendor files in ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git\|bower_components' " don't show vendor files in ctrlp
 let g:netrw_banner=0 " hide netrw banner
 set number " show line numbers
 
@@ -37,6 +41,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_splits = 0
 
 
 ""          "
@@ -45,18 +50,29 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 set incsearch " snap to matches before I press Enter
 set cindent " indent based on braces
-set tabstop=4 " show existing tab with 4 spaces width
-    " ( this possibly does nothing when shiftwidth and expandtab are set)
-set shiftwidth=4 " >> inserts four spaces in normal/visual mode
-set expandtab " Tab key inserts four spaces in insert mode
+set tabstop=2 " show existing tab with 2 spaces width
+set shiftwidth=2 " >> inserts two spaces in normal/visual mode
+set expandtab " Tab key inserts two spaces in insert mode
 set mouse=a " enable mouse
 set backspace=2 " make backspace work like most other apps
 set pastetoggle=<F2> " F2 for better clipboard pasting
 set clipboard=unnamed " default register copies/pastes to/from Mac clipboard
 
 set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
+set foldnestmax=4      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
+
+let g:NERDSpaceDelims = 0
+
+let g:syntastic_javascript_checkers = ['standard']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
 
 ""              "
 "" KEY BINDINGS "
@@ -70,13 +86,23 @@ nnoremap <esc>j :resize +5<Return>
 nnoremap <esc>k :resize -5<Return>
 nnoremap <esc>l :vertical resize +5<Return>
 " Alt+/ to comment current line - must be recursive because of plugin
-nmap <esc>/ <leader>c<Space>h
+nmap <esc>/ <leader>cc
+vmap <esc>/ <leader>cc
+nmap <esc>. <leader>cu
+vmap <esc>. <leader>cu
+let NERDSpaceDelims=1
 " comma+f brings up fuzzy search
 nnoremap ,f :CtrlSF<Space>
+" comma+s brings up search and replace because I always forget how
+nnoremap ,s :%s/x/y/gc
 
 " Tab and Shift+Tab move between tabs
 nnoremap <Tab> :tabnext<cr>
 nnoremap <S-Tab> :tabprev<cr>
+
+" For browsing commits, from vim-unimpaired
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprev<cr>
 
 " qq as escape alias
 vnoremap qq v
@@ -87,6 +113,12 @@ inoremap qq <esc>
 nnoremap j gj
 nnoremap k gk
 
-" comma+s brings up search and replace because I always forget how
-nnoremap ,s :%s/x/y/gc
+" disable linter
+nnoremap ,j :let g:syntastic_javascript_checkers = []<cr>
+
+" don't copy deleted line into active buffer
+nnoremap <esc>d "_d
+
+" quit all unsaved tabs
+map <F3> :bufdo q
 

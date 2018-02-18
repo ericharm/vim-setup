@@ -4,14 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ericharm/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-#ZSH_THEME="powerline"
-#POWERLINE_RIGHT_B="none"
-#POWERLINE_PATH="short"
-#POWERLINE_HIDE_HOST_NAME="true"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -99,7 +93,17 @@ export PATH=~/.composer/vendor/bin:$PATH
 export PATH="$HOME/.phpenv/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/gems/ruby-2.4.2"
 
 export PATH=~/Library/Python/2.7/bin:$PATH
+# prevent python from making .pyc files
+export PYTHONDONTWRITEBYTECODE=1
+
+# go
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+alias ls="colorls"
+alias cat="lolcat"
 
