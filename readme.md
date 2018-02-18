@@ -19,7 +19,7 @@
 - I have removed my bundle folder from this repo.  The plugins that my vimrc depends on are:
 ctrlp, ctrlsf, nerdcommenter, supertab, syntastic, vim-airline, vim-fugitive,
   vim-javascript-syntax and vim-windowswap.
-- I also use emmet-vim and a few additional syntax/linting pluging
+- I also use emmet-vim and a few additional syntax/linting plugins
 
 # Tmux
 
