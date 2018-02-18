@@ -15,9 +15,8 @@
 # Vim and other configs
 
 - you'll need pathogen (https://github.com/tpope/vim-pathogen)
-- manually install airline for vim: `git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline`
 - I use vim 8.0 which I installed via homebrew, for no reason other than getting the + buffer so I can copy to my Mac's clipboard
-- I have removed my bundle folder.  The plugins that my vimrc depends on are:
+- I have removed my bundle folder from this repo.  The plugins that my vimrc depends on are:
 ctrlp, ctrlsf, nerdcommenter, supertab, syntastic, vim-airline, vim-fugitive,
   vim-javascript-syntax and vim-windowswap.
 - I also use emmet-vim and a few additional syntax/linting pluging
