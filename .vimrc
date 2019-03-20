@@ -12,15 +12,20 @@ set nocompatible
 
 syntax on
 syntax enable " gimme colors
+set ignorecase
+set smartcase
 "set t_Co=256 " gimme lots of colors
 colo Dusk
 "colo elisex
 set list " show trailing spaces
-set listchars=trail:·
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
 set listchars=tab:>-
+set cursorline
+highlight CursorLine guibg=black term=bold cterm=bold
 
 let g:netrw_list_hide='.*\.swp$,.DS_Store' " hide temporary buffer files in source tree
-let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git\|bower_components' " don't show vendor files in ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git\|bower_components\|packs' " don't show vendor files in ctrlp
 let g:netrw_banner=0 " hide netrw banner
 set number " show line numbers
 
@@ -62,9 +67,10 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=4      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 
-let g:NERDSpaceDelims = 0
+" let g:NERDSpaceDelims = 0
 
 let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_cpp_compiler_options = "-std=c++11"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -72,6 +78,9 @@ set statusline+=%*
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+
+" let g:syntastic_cpp_compiler = 'clang++'
+" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 
 ""              "
@@ -81,20 +90,27 @@ let g:syntastic_check_on_open = 1
 " Space opens a new tab in the current directory
 nnoremap <Space> :tabe<Space>.<Return>
 " Alt+h/j/k/l to resize panes
-nnoremap <esc>h :vertical resize -5<Return>
-nnoremap <esc>j :resize +5<Return>
-nnoremap <esc>k :resize -5<Return>
-nnoremap <esc>l :vertical resize +5<Return>
+nnoremap <C-h> :vertical resize -5<Return>
+nnoremap <C-j> :resize +5<Return>
+nnoremap <C-k> :resize -5<Return>
+nnoremap <C-l> :vertical resize +5<Return>
 " Alt+/ to comment current line - must be recursive because of plugin
-nmap <esc>/ <leader>cc
-vmap <esc>/ <leader>cc
-nmap <esc>. <leader>cu
-vmap <esc>. <leader>cu
+nmap <C-_> <leader>cc
+vmap <C-_> <leader>cc
+nmap <C-?> <leader>cu
+vmap <C-?> <leader>cu
 let NERDSpaceDelims=1
 " comma+f brings up fuzzy search
 nnoremap ,f :CtrlSF<Space>
 " comma+s brings up search and replace because I always forget how
 nnoremap ,s :%s/x/y/gc
+" Use black hole registers to delete/change without copying to default register
+nnoremap ,d "_d
+nnoremap ,c "_c
+" Turn off syntax checker
+nnoremap ,j :SyntasticToggleMode<cr>
+" Close all saved tabs
+nnoremap ,q :bufdo q
 
 " Tab and Shift+Tab move between tabs
 nnoremap <Tab> :tabnext<cr>
@@ -113,12 +129,5 @@ inoremap qq <esc>
 nnoremap j gj
 nnoremap k gk
 
-" disable linter
-nnoremap ,j :let g:syntastic_javascript_checkers = []<cr>
-
-" don't copy deleted line into active buffer
-nnoremap <esc>d "_d
-
-" quit all unsaved tabs
-map <F3> :bufdo q
-
+" change capitalization of word you just typed with alt+`
+inoremap <C-`> <esc>b~e
