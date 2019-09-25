@@ -1,10 +1,26 @@
 set termguicolors
-"" load plugins through pathogen
-execute pathogen#infect()
 filetype plugin on
 filetype plugin indent on
 set nocompatible
 
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'schickling/vim-bufonly'
+Plug 'dyng/ctrlsf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-syntastic/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'posva/vim-vue'
+Plug 'Shougo/deoplete.nvim'
+Plug 'ervandew/supertab'
+call plug#end()
 
 ""            "
 "" APPEARANCE "
@@ -18,8 +34,8 @@ set smartcase
 colo Dusk
 "colo elisex
 set list " show trailing spaces
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$/
+" highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+" match ExtraWhitespace /\s\+$/
 set listchars=tab:>-
 set cursorline
 highlight CursorLine guibg=black term=bold cterm=bold
@@ -67,20 +83,12 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=4      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 
-" let g:NERDSpaceDelims = 0
-
 let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_cpp_compiler_options = "-std=c++11"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" let g:syntastic_cpp_compiler = 'clang++'
-" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 
 ""              "
@@ -95,11 +103,8 @@ nnoremap <C-j> :resize +5<Return>
 nnoremap <C-k> :resize -5<Return>
 nnoremap <C-l> :vertical resize +5<Return>
 " Alt+/ to comment current line - must be recursive because of plugin
-nmap <C-_> <leader>cc
-vmap <C-_> <leader>cc
-nmap <C-?> <leader>cu
-vmap <C-?> <leader>cu
-let NERDSpaceDelims=1
+nmap <C-_> gcc
+
 " comma+f brings up fuzzy search
 nnoremap ,f :CtrlSF<Space>
 " comma+s brings up search and replace because I always forget how
@@ -109,8 +114,6 @@ nnoremap ,d "_d
 nnoremap ,c "_c
 " Turn off syntax checker
 nnoremap ,j :SyntasticToggleMode<cr>
-" Close all saved tabs
-nnoremap ,q :bufdo q
 
 " Tab and Shift+Tab move between tabs
 nnoremap <Tab> :tabnext<cr>
