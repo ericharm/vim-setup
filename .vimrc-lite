@@ -1,0 +1,22 @@
+syntax enable
+set number
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'easymotion/vim-easymotion'
+Plug 'tomtom/tcomment_vim'
+call plug#end()
+
+nnoremap <Space> :Tex<Return>
+nnoremap ,f :CtrlSF<Space>
+nnoremap <Tab> :tabnext<cr>
+nnoremap <S-Tab> :tabprev<cr>
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git\|bower_components\|packs'
